@@ -20,11 +20,13 @@ export default class Map implements MapProperties {
     }
 
 
-    generateTileMap(originX: number, orginY: number, nHorizontal: number, nVeritical: number, tHeight: number, tWidth: number) {
+    generateTileMap(originX: number, orginY: number) {
         let genesisTile: Tile;
         let previousTile: Tile;
         let shiftY: number = orginY;
         let shiftX: number = originX;
+        let nHorizontal = this.mapping.length
+        let nVeritical = this.mapping[0].length
         let testMap: TileProperty[][] = Array(nHorizontal).fill(0).map(() => new Array(nVeritical).fill(0));
     
         for (let vi = 0; vi < nVeritical; vi++) {
@@ -33,12 +35,12 @@ export default class Map implements MapProperties {
                 
                 if (this.genesis) {
                     let plainTile:TileProperty = {
-                        _id: uuid4(),
+                        _id: this.mapping[vi][hi]._id,
                         x: originX,
                         y: shiftY,
-                        height: tHeight,
-                        width:tWidth ,
-                        type: "plain"
+                        height: this.mapping[vi][hi].height,
+                        width: this.mapping[vi][hi].width ,
+                        type: this.mapping[vi][hi].type
                     }
                     genesisTile = new Tile(this.scene,plainTile)
                     this.genesis = false
@@ -50,12 +52,12 @@ export default class Map implements MapProperties {
                     const newTilePositionX = previousTile.rect.x + previousTile.rect.width
                     const newTilePositionY = shiftY
                     let plainTile:TileProperty = {
-                        _id: uuid4(),
+                        _id: this.mapping[vi][hi]._id,
                         x: newTilePositionX,
                         y: newTilePositionY,
-                        height: tHeight,
-                        width:tWidth ,
-                        type: "plain"
+                        height: this.mapping[vi][hi].height,
+                        width: this.mapping[vi][hi].width ,
+                        type: this.mapping[vi][hi].type
                     }
                     let tile = new Tile(this.scene, plainTile)
 
@@ -67,7 +69,7 @@ export default class Map implements MapProperties {
 
             }
 
-            shiftY = shiftY + tHeight
+            shiftY = shiftY + this.mapping[vi][0].height
             this.genesis = true
 
 

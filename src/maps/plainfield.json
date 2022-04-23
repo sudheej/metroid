@@ -30,7 +30,7 @@
             "y": 100,
             "height": 25,
             "width": 25,
-            "type": "plain"
+            "type": "path"
         },
         {
             "_id": "a304f3f7-c658-48bc-82bf-f98ceda9b7a4",
@@ -38,7 +38,7 @@
             "y": 100,
             "height": 25,
             "width": 25,
-            "type": "plain"
+            "type": "path"
         },
         {
             "_id": "859080d4-3281-4ea2-8a99-3ef6e9ba1dcd",
@@ -192,7 +192,7 @@
             "y": 125,
             "height": 25,
             "width": 25,
-            "type": "plain"
+            "type": "path"
         },
         {
             "_id": "c7ffbad8-991a-4ca1-b485-06e217a9abf7",
@@ -200,7 +200,7 @@
             "y": 125,
             "height": 25,
             "width": 25,
-            "type": "plain"
+            "type": "path"
         },
         {
             "_id": "df39cf42-602c-4c75-8d29-1d74dc2be0ff",

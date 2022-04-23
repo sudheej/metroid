@@ -21,6 +21,10 @@ export default class Tile extends Phaser.GameObjects.Shape implements TileCapabi
         super(scene,'rectangle')
     this.rect = new Phaser.GameObjects.Rectangle(scene,properties.x, properties.y, properties.width,properties.height, 0x6666ff);
     this.rect.setStrokeStyle(1)
+    if(properties.type==="path") {
+      this.rect.fillColor = 0x000000
+    }
+    
     scene.add.existing(this.rect)
     this.properties = properties
 }
