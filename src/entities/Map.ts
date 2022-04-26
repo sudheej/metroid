@@ -1,6 +1,6 @@
 import Phaser, { Tweens } from 'phaser';
 import Tile,{TileProperty} from './Tile';
-import {v4 as uuid4} from 'uuid'
+
 
 interface MapProperties {
     returnMap():TileProperty[][]
