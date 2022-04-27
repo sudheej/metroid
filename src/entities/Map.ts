@@ -16,7 +16,7 @@ export default class Map implements MapProperties {
     }
 
     returnMap(): TileProperty[][] {
-        throw new Error('Method not implemented.');
+        return this.mapping
     }
 
 
